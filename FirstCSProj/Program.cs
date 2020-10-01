@@ -9,6 +9,7 @@ namespace FirstCSProj
         {
             string msg = SayHello.GetMessage();
             Console.WriteLine(msg);
+            Console.ReadKey();
         }
     }
 }
