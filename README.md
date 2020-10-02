@@ -37,6 +37,7 @@ or change it to true in vcxproj files.
 7) CopySymbols function. Copies symbols into Symboles directory in {solution_foler}/out/{Configuration}/Symbols folder.
 
 ## Notes
+* If you have OAth token for your repository, you could pass it as parameter: `AutomationScript.ps1 -OAuthToken {your_token}`
 * This repository contains also AutomationScript.ps1 file. You don't need to download other files.
 * It don't work under 'Any Cpy' configuration. For this needs to add this configuration in *proj files.
 * This project by default trying to find all outputs of projects in bin/{Configuration}_{Platform} folder. It won't work if OutputDir configured in another way.
