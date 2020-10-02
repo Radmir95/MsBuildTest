@@ -26,6 +26,9 @@
 
 .PARAMETER Repository
     [Optional] Your repository in GitHub. Default value: MsBuildTest
+
+.PARAMETER OAthToken
+    [Optional] OAthToken for your repository.
 #>
 
 param(
