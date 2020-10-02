@@ -34,7 +34,8 @@ param(
     [string]$Platform = "x64",
     [string]$SourcesDirectory = "",
     [string]$Owner = "Radmir95",
-    [string]$Repository = "MsBuildTest"
+    [string]$Repository = "MsBuildTest",
+    [string]$OAthToken = ""
 )
 
 if ([System.String]::IsNullOrEmpty($SourcesDirectory)){
@@ -74,9 +75,14 @@ function GetMsBuildPathFromVswhere {
     }
 }
 
-function InitializeWebClient(){
+function InitializeWebClient{
+    Param(
+        [string]$OAthToken = ""
+    )
     $webClient = New-Object -TypeName System.Net.WebClient
-    $webClient.Headers.Add('Authorization', 'token 3fc767000c53fe887575a219ba9993817a371b91')
+    if (![System.String]::IsNullOrEmpty($OAthToken)){
+        $webClient.Headers.Add('Authorization', "token $($OAthToken)")
+    }
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     return $webClient
 }
@@ -305,8 +311,12 @@ function CopySymbols{
     }
 }
 
+if ([System.String]::IsNullOrEmpty($OAthToken)){
+    $OAthToken = ""
+}
+
 # Init WebClient
-$webClient = InitializeWebClient
+$webClient = InitializeWebClient -OAthToken $OAthToken
 
 # Download recursivly files
 GetFilesFromRepo -WebClient $webClient -Owner $Owner -Repository $Repository -DestinationPath $DestinationPath
