@@ -15,7 +15,7 @@ FirstCSProj - call static method from SecondCSProj and writes in console result 
 SecondCSProj - contain static method which returns "Hello" message.  
 
 ## AutomationScript working process
-1) GetFilesFromRepo function. Downloads files from specified repository (be default selected this repository). 
+1) GetFilesFromRepo function. Downloads files from specified repository (by default selected this repository). 
 If you want to change repository to other one you should pass in script additional parameters `AutomationScript.ps1 -Owner {you_name} -Repository {you_repository}`, 
 also change authorization token in InitializeWebClient function.
 2) EnableSymbolsInConfiguration function. Add DebugSymbols node if doesn't exist or change it to true in csproj files. Add GenerateDebugInformation if doesn't exist 
