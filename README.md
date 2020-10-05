@@ -2,7 +2,7 @@
 
 ## Description
 
-This project contains thress simple projects and automation script for processing these projects.
+This solution contains three simple projects and automation script for processing these projects.
 
 ## Solution structure
 This solution conains following projects:
