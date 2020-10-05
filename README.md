@@ -33,8 +33,8 @@ or change it to true in vcxproj files.
   ...
 </Files>
 ```
-6) CompressArchiveAndCopyIntoConfigurationFolder function. Compress archives and place them into {solution_foler}/out/{Configuration} folder.
-7) CopySymbols function. Copies symbols into Symboles directory in {solution_foler}/out/{Configuration}/Symbols folder.
+6) CompressArchiveAndCopyIntoConfigurationFolder function. Compress archives and place them into {solution_folder}/out/{Configuration} folder.
+7) CopySymbols function. Copies symbols into Symbols directory in {solution_foler}/out/{Configuration}/Symbols folder.
 
 ## Notes
 * If you have OAth token for your repository, you could pass it as parameter: `AutomationScript.ps1 -OAuthToken {your_token}`
